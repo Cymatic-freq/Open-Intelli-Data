@@ -13,6 +13,7 @@
     <h3>Open Intelli-Data</h3>
     <!--The div element for the map -->
     <div id="map"></div>
+    <input type="text" id="pac-input" placeholder="Search here..."></input>
     <script>
 // Initialize and add the map
 function initMap() {
@@ -24,7 +25,85 @@ function initMap() {
       document.getElementById('map'), {zoom: 4, center: uluru, mapTypeId: 'satellite'});
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: uluru, map: map});
+
+  var input = document.getElementById('pac-input');
+        var clear = document.getElementById('clearmap');
+        var cl = document.getElementById('cl');
+        var bt = document.getElementById('myBtn');
+
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(clear);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(cl);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(bt);
+
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          placeMarkers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon2 = {
+              url: place.icon,
+              //size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(12.5, 12.5),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            var request = {
+              placeId: place.place_id,
+              fields: ['name', 'formatted_address', 'place_id', 'geometry']
+            };
+
+            iw = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+
+            m = new google.maps.Marker({
+              map: map,
+              icon: icon2,
+              title: place.name,
+              position: place.geometry.location
+            });
+
+            // Create a marker for each place.
+            placeMarkers.push(m);
+            google.maps.event.addListener(m, 'click', function() {
+                          iw.setContent('<div><strong>' + place.name + '</strong><br>' +
+                          'Hours: ' + place.opening_hours + '<br>' +
+                            place.formatted_address + '</div>');
+                          iw.open(map, this);
+                        });
+
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+
 }
+
+
     </script>
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
@@ -34,8 +113,9 @@ function initMap() {
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-D9vKQNL0kqU8HRW1KWcedD-ObISOO5E&callback=initMap">
     </script>
-    
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/7.22.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -45,7 +125,30 @@ function initMap() {
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
 
-    
-  </body>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYW3wlLEBUWM6NI0gH8KF4-CN4tiTqoyg",
+    authDomain: "spaceapp-cac00.firebaseapp.com",
+    databaseURL: "https://spaceapp-cac00.firebaseio.com",
+    projectId: "spaceapp-cac00",
+    storageBucket: "spaceapp-cac00.appspot.com",
+    messagingSenderId: "367448472069",
+    appId: "1:367448472069:web:5b8971a187786654723a6c",
+    measurementId: "G-4F6L3ELMK3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</body>
 </html>

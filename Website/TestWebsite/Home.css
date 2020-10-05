@@ -1,0 +1,69 @@
+.u-section-1 {background-image: url("images/tobias-tullius-PXXtq6bp6cs-unsplash.jpg"); background-position: 50% 50%}
+.u-section-1 .u-sheet-1 {min-height: 795px}
+.u-section-1 .u-group-1 {width: 434px; min-height: 250px; height: auto; margin: 48px 0 0 auto}
+.u-section-1 .u-container-layout-1 {padding: 30px}
+.u-section-1 .u-btn-1 {text-transform: uppercase; letter-spacing: 2px; font-weight: 700; background-image: none; border-style: none; margin: 0 auto 0 0}
+.u-section-1 .u-text-1 {font-size: 6.25rem; font-weight: 700; margin: 327px -41px 60px 0} 
+
+@media (max-width: 1199px){ .u-section-1 .u-sheet-1 {min-height: 656px}
+.u-section-1 .u-text-1 {margin-right: 0} }
+
+@media (max-width: 991px){ .u-section-1 .u-sheet-1 {min-height: 502px} }
+
+@media (max-width: 767px){ .u-section-1 .u-sheet-1 {min-height: 696px}
+.u-section-1 .u-group-1 {margin-top: 47px; margin-right: auto; margin-left: 0}
+.u-section-1 .u-container-layout-1 {padding-left: 10px; padding-right: 10px}
+.u-section-1 .u-text-1 {font-size: 8.125rem} }
+
+@media (max-width: 575px){ .u-section-1 .u-sheet-1 {min-height: 438px}
+.u-section-1 .u-group-1 {width: 340px}
+.u-section-1 .u-text-1 {font-size: 6rem} }.u-section-2 .u-sheet-1 {min-height: 615px}
+.u-section-2 .u-layout-wrap-1 {width: 538px; margin: 70px 0 0 auto}
+.u-section-2 .u-layout-cell-1 {min-height: 400px}
+.u-section-2 .u-container-layout-1 {padding: 30px 60px}
+.u-section-2 .u-layout-cell-2 {min-height: 400px}
+.u-section-2 .u-container-layout-2 {padding: 30px}
+.u-section-2 .u-text-1 {margin: 23px 0 0}
+.u-section-2 .u-text-2 {margin: 20px 0 0}
+.u-section-2 .u-btn-1 {font-size: 0.875rem; letter-spacing: 1px; background-image: none; border-style: none none solid; text-transform: uppercase; font-weight: 600; width: 99px; height: 33px; margin: 20px auto 0 0; padding: 5px 0}
+.u-section-2 .u-form-1 {margin: 30px auto 0 0}
+.u-section-2 .u-image-1 {width: 536px; height: 445px; margin: -423px auto 60px 20px} 
+
+@media (max-width: 1199px){ .u-section-2 .u-layout-cell-1 {min-height: 330px; background-position: 50% 50%}
+.u-section-2 .u-layout-cell-2 {min-height: 330px} }
+
+@media (max-width: 991px){ .u-section-2 .u-layout-cell-1 {min-height: 100px}
+.u-section-2 .u-container-layout-1 {padding-left: 30px; padding-right: 30px}
+.u-section-2 .u-layout-cell-2 {min-height: 100px} }
+
+@media (max-width: 767px){ .u-section-2 .u-sheet-1 {min-height: 5115px}
+.u-section-2 .u-layout-cell-1 {min-height: 4800px}
+.u-section-2 .u-container-layout-1 {padding-left: 10px; padding-right: 10px}
+.u-section-2 .u-container-layout-2 {padding-left: 10px; padding-right: 10px}
+.u-section-2 .u-image-1 {margin-left: 4px} }
+
+@media (max-width: 575px){ .u-section-2 .u-sheet-1 {min-height: 3185px}
+.u-section-2 .u-layout-wrap-1 {width: 340px}
+.u-section-2 .u-layout-cell-1 {min-height: 100px}
+.u-section-2 .u-form-group-1 {width: 100%}
+.u-section-2 .u-form-group-2 {width: 100%}
+.u-section-2 .u-image-1 {width: 340px; height: 282px; margin-left: 0} }.u-section-3 .u-sheet-1 {min-height: 615px}
+.u-section-3 .u-list-1 {width: 772px; min-height: 475px; grid-template-rows: auto auto auto; grid-template-columns: 100%; grid-gap: 10px 10px; height: auto; margin: 57px auto 60px 166px}
+.u-section-3 .u-container-layout-1 {padding: 30px}
+.u-section-3 .u-icon-1 {height: 64px; width: 64px; margin: 0 20px}
+.u-section-3 .u-text-1 {font-size: 1rem; margin: -64px -5px 0 120px}
+.u-section-3 .u-container-layout-2 {padding: 30px}
+.u-section-3 .u-icon-2 {height: 64px; width: 64px; margin: 0 20px}
+.u-section-3 .u-text-2 {font-size: 1rem; margin: -64px -5px 0 120px}
+.u-section-3 .u-container-layout-3 {padding: 30px}
+.u-section-3 .u-icon-3 {height: 64px; width: 64px; margin: 0 20px}
+.u-section-3 .u-text-3 {font-size: 1rem; margin: -64px -5px 0 120px} 
+
+@media (max-width: 991px){ .u-section-3 .u-list-1 {width: 720px; margin-left: 0} }
+
+@media (max-width: 767px){ .u-section-3 .u-list-1 {width: 540px}
+.u-section-3 .u-container-layout-1 {padding-left: 10px; padding-right: 10px}
+.u-section-3 .u-container-layout-2 {padding-left: 10px; padding-right: 10px}
+.u-section-3 .u-container-layout-3 {padding-left: 10px; padding-right: 10px} }
+
+@media (max-width: 575px){ .u-section-3 .u-list-1 {width: 340px} }

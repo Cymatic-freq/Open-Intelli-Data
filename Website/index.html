@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- This is a very simple example of using Web WorldWind. -->
+<html>
+
+<head lang="en">
+
+<meta charset="UTF-8">
+<title>Enviromap</title>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhZ2dlcmVkZ29yZTk5IiwiYSI6ImNrOG1rN3lvbzBmdTEzZ24xbDJhODE0aTQifQ.m7OCieIRZeQ9v3fM9YWB9w';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+        });
+    </script>
+
+</body>
